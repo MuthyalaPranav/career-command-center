@@ -1,0 +1,27 @@
+# Local environment configuration
+.env
+.env.*
+!.env.example
+
+# Frontend dependencies and build output
+node_modules/
+dist/
+.npm-cache/
+*.tsbuildinfo
+
+# Python environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Private resume and job data
+private_uploads/
+private_extractions/
+private_job_analyses/
+private_matches/
+private_generated_resumes/
+private_workspace/
+
+# Local logs
+*.log

@@ -1,0 +1,70 @@
+:root { --section-gap:24px; --panel-radius:16px; --panel-pad:clamp(20px,2vw,28px); --desk-blue:var(--link); }
+body { font-family:Inter,"Segoe UI",system-ui,sans-serif; }
+.workspace-main { max-width:1440px; padding:32px clamp(24px,3vw,40px) 56px; }
+.document-desk,.resume-management,.master-workspace,.workflow-page { min-width:0; }
+.desktop-sidebar,.topbar { background:var(--surface); }
+.sidebar-nav a,.icon-button,.source-actions button,.source-delete,.format-options label { min-height:44px; }
+.sidebar-nav a { border-radius:12px; }
+.workspace-main :is(.surface,.desk-editions,.master-summary,.desk-tools,.desk-records>section,.edition-reader) {
+  border:1px solid var(--line); border-radius:var(--panel-radius); background:var(--surface); box-shadow:var(--shadow);
+}
+.workspace-main :is(.surface,.desk-editions,.master-summary,.desk-tools,.desk-records>section) { padding:var(--panel-pad); }
+.workspace-main :is(.desk-heading h1,.management-heading h1,.master-panel>h2,.analyzer-panel>h2,.match-source-panel>h2,.settings-panel h1) {
+  font:650 clamp(1.8rem,3vw,2.8rem)/1.12 Inter,"Segoe UI",sans-serif; letter-spacing:-.045em; color:var(--text);
+}
+.desk-heading { padding:0 0 28px; }
+.desk-layout,.desk-records { gap:24px; grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+.desk-records { margin-top:24px; }
+.desk-records h2,.desk-editions h2,.master-summary h2,.spread-heading h2 { font-size:1.16rem; line-height:1.3; font-family:inherit; font-weight:650; letter-spacing:-.025em; }
+.master-summary { align-self:start; }
+.master-summary header,.summary-file,.jd-filters,.source-actions,.source-delete,.format-options label { display:flex; align-items:center; gap:12px; }
+.master-summary header { justify-content:space-between; }
+.master-summary header span { color:var(--success); background:var(--success-soft); border-radius:20px; padding:4px 12px; font-size:.8rem; }
+.folio-object.summary-file { display:flex; align-items:center; justify-content:flex-start; width:100%; height:auto; min-height:120px; padding:20px 0; transform:none; color:var(--text); }
+.summary-file strong,.summary-file small { display:block; overflow-wrap:anywhere; }
+.summary-file strong { font-size:1.16rem; }
+.summary-file small { margin-top:4px; color:var(--muted); }
+.summary-file>svg:last-child { margin-left:auto; flex:none; }
+.summary-file-icon { background:var(--accent-soft); color:var(--link); padding:14px; border-radius:14px; }
+.desk-tools .analysis-entry { padding-top:0; }
+.analysis-entry strong { font:650 1.3rem/1.25 Inter,"Segoe UI",sans-serif; }
+.desk-tools .desk-editions { border:0; box-shadow:none; padding:0; }
+.desk-tools .studio-entry { margin:12px 0 16px; }
+.source-management { margin-block:24px; }
+.source-management>ul { display:grid; gap:8px; margin-top:12px; }
+.source-management li { display:flex; align-items:center; flex-wrap:wrap; gap:12px; padding:12px 16px; background:var(--surface-raised); border:0; border-radius:12px; }
+.source-management li>svg { color:var(--link); }
+.source-name { flex:1 1 160px; font-weight:600; }
+.source-name small { font-weight:400; }
+.source-actions { gap:4px; flex-wrap:wrap; }
+.source-actions button,.source-delete { padding:4px 9px; border-radius:8px; font-size:.85rem; }
+.source-actions button:hover,.source-delete:hover { background:var(--surface); }
+.source-delete { color:var(--danger); }
+.source-preview-panel,.result-disclosure,.format-options { margin-top:20px; border:1px solid var(--line); border-radius:12px; padding:16px; }
+summary { cursor:pointer; }
+.source-preview-panel summary,.result-disclosure summary { font-weight:600; }
+.source-preview-panel .master-details { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+.jd-filters,.format-options { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+.jd-filters { margin-top:16px; font-size:.88rem; }
+.jd-filters input[type=search] { display:block; background:var(--field); border:1px solid var(--line-input); border-radius:8px; padding:10px; }
+.format-options label { background:var(--surface-raised); padding:8px 16px; border-radius:10px; cursor:pointer; }
+.format-options legend { padding-inline:6px; font-weight:650; }
+.workflow-page:not([hidden])+.workflow-page:not([hidden]),.export-panel,.match-workspace>.primary-button { margin-top:24px; }
+.comparison-spread,.studio-workspace { border-radius:16px; background:var(--app-bg); border:0; }
+.manuscript-toolbar { border-radius:12px; flex-wrap:wrap; }
+.studio-grid { padding:20px 0; gap:20px; }
+.management-heading { margin-bottom:20px; }
+.history-list { gap:16px; }
+.history-list .resume-card { border-radius:14px; box-shadow:var(--shadow); padding:20px; }
+.workflow-page[hidden],.master-workspace[hidden],.match-source-panel details[hidden] { display:none; }
+@media(max-width:760px) {
+  .workspace-main { padding:20px 16px 40px; }
+  .desk-layout,.desk-records,.source-preview-panel .master-details { grid-template-columns:minmax(0,1fr); gap:16px; }
+  .source-actions { order:1; width:100%; }
+  .source-name { flex-basis:100px; }
+}
+@media(prefers-reduced-motion:no-preference) {
+  .workspace-main>.workflow-page:not([hidden]),.workspace-main>.master-workspace:not([hidden]),.confirm-dialog[open] { animation:arrive .18s ease-out; }
+}
+
+.overview-documents { display:grid; align-content:start; gap:24px; }
